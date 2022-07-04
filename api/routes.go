@@ -17,4 +17,6 @@ func LoadRoutes(router gin.IRouter) {
 
 	v1Authorized.GET("", middleware.AuthMiddleware(), handler.NewGreetingHandler().HandleGreetings)
 
+	v1Authorized.PUT("/capabilities", middleware.AuthMiddleware(), handler.NewCapabilityHandler().HandleCapabilityCreation)
+
 }
